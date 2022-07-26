@@ -28,13 +28,15 @@ class MyCircularQueue:
     def __init__(self, k: int):
         self.k = k
         self.queue = [None] * k
-        self.start_pos = 0
+        self.start_pos = -1
         self.end_pos = -1
 
 
     def enQueue(self, value: int) -> bool:
         if self.isFull():
             return False
+        if self.isEmpty():
+            self.start_pos = 0
         self.end_pos = (self.end_pos + 1) % self.k
         self.queue[self.end_pos] = value
         return True
@@ -43,10 +45,14 @@ class MyCircularQueue:
     def deQueue(self) -> bool:
         if self.isEmpty():
             return False
+            
+        self.queue[self.start_pos] = None
+        if self.start_pos == self.end_pos:
+            self.start_pos = -1
+            self.end_pos = -1
         else:
-            self.queue[self.start_pos] = None
             self.start_pos = (self.start_pos + 1) % self.k
-            return True
+        return True
 
 
     def Front(self) -> int:
