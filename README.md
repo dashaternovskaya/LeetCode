@@ -1,5 +1,5 @@
 # LeetCode
 
-Problems Solving on https://leetcode.com
+Problems solving on https://leetcode.com
 
-My Profile Page on LeetCode is available by [link](https://leetcode.com/dashaternovskaya/)
+My profile page on LeetCode is available by [link](https://leetcode.com/dashaternovskaya/)
